@@ -14,7 +14,7 @@ public class GithubRepoPageProcessor implements PageProcessor {
     private Site site = Site.me().setRetryTimes(3).setSleepTime(1000).setTimeOut(10000);
 
     @Override
-    //process是/***定制***/爬虫逻辑的核心接口，在这里编写抽取逻辑
+    //process是/***定制****/爬虫逻辑的核心接口，在这里编写抽取逻辑
     public void process(Page page) {
         //部分三 从页面发现后续的URL地址来抓取
         page.addTargetRequests(page.getHtml().links().regex("(https://github\\.com/[\\w\\-]+/[\\w\\-]+)").all());
